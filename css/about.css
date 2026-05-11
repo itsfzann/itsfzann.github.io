@@ -130,30 +130,6 @@ nav ul li a.active::after {
   align-items: center;
 }
 
-/* IMAGE */
-.about-image {
-  display: flex;
-  justify-content: center;
-}
-
-.image-box {
-  width: 360px;
-  height: 480px;
-
-  overflow: hidden;
-  border-radius: 30px;
-
-  background: #e2e8f0;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* CONTENT */
 .small-title {
   color: #2563eb;
