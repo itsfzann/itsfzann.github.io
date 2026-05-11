@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +8,26 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #f8fafc;
   color: #0f172a;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* =========================
+   ROOT COLORS
+========================= */
+:root {
+  --primary-color: #2563eb;
+  --text-color: #0f172a;
+  --secondary-text: #64748b;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
 }
 
 /* =========================
@@ -16,56 +35,65 @@ body {
 ========================= */
 nav {
   width: 100%;
-  padding: 22px 8%;
+  padding: 20px 8%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.9);
-
-  border-bottom: 1px solid #e2e8f0;
-
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--border-color);
+
+  backdrop-filter: blur(14px);
+
+  transition: 0.3s ease;
 }
 
+nav.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* LOGO */
 .logo-box {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
-.logo {
+.logo-box h2 {
   font-size: 24px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text-color);
+  letter-spacing: -0.5px;
 }
 
-.job {
-  margin-top: 4px;
+.logo-box p {
   font-size: 14px;
-  color: #64748b;
+  color: var(--secondary-text);
 }
 
+/* MENU */
 nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 28px;
+  gap: 32px;
 }
 
 nav ul li a {
+  position: relative;
+
   text-decoration: none;
   color: #334155;
 
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 
-  position: relative;
-
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 nav ul li a::after {
@@ -73,159 +101,161 @@ nav ul li a::after {
 
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -7px;
 
   width: 0%;
   height: 2px;
 
-  background: #2563eb;
+  border-radius: 50px;
 
-  transition: 0.3s;
+  background: var(--primary-color);
+
+  transition: 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #2563eb;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-/* ACTIVE NAV */
+nav ul li a:hover,
 nav ul li a.active {
-  color: #2563eb;
+  color: var(--primary-color);
 }
 
+nav ul li a:hover::after,
 nav ul li a.active::after {
   width: 100%;
+}
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+#theme-toggle {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #eff6ff;
+  color: var(--primary-color);
+
+  font-size: 18px;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: translateY(-2px);
+
+  background: var(--primary-color);
+  color: white;
 }
 
 /* =========================
    ABOUT
 ========================= */
 .about-section {
+  width: 100%;
   min-height: 90vh;
-  padding: 70px 8%;
 
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 70px;
+  padding: 100px 8%;
 
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-/* IMAGE */
-.about-image {
-  display: flex;
-  justify-content: center;
-}
-
-.image-box {
-  width: 360px;
-  height: 480px;
-
-  overflow: hidden;
-  border-radius: 30px;
-
-  background: #e2e8f0;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.image-box img {
+.about-content {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 900px;
+
+  text-align: center;
 }
 
-/* CONTENT */
+/* SMALL TITLE */
 .small-title {
-  color: #2563eb;
+  display: inline-block;
+
+  color: var(--primary-color);
+
   font-size: 14px;
+  font-weight: 700;
   letter-spacing: 2px;
-  font-weight: 600;
+
+  margin-bottom: 20px;
 }
 
+/* TITLE */
 .about-content h1 {
-  margin-top: 20px;
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1.15;
+  letter-spacing: -2px;
 
-  font-size: 56px;
-  line-height: 1.2;
-
-  color: #0f172a;
+  color: var(--text-color);
 }
 
+/* DESCRIPTION */
 .about-content p {
-  margin-top: 25px;
-
-  line-height: 1.9;
-  color: #475569;
+  margin-top: 24px;
 
   font-size: 17px;
+  line-height: 1.9;
+
+  color: #475569;
 }
 
 /* =========================
    PROJECT EXPERIENCE
 ========================= */
 .project-section {
-  margin-top: 50px;
-  width: 100%;
+  margin-top: 60px;
 }
 
 .project-section h3 {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 
-  font-size: 24px;
+  font-size: 28px;
   color: var(--text-color);
 }
 
-/* MEMANJANG KE BAWAH FOTO */
+/* SKILLS */
 .skills {
-  width: 100%;
-
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .skill-card {
-  width: 100%;
-
-  padding: 18px 22px;
+  padding: 22px;
 
   background: var(--card-bg);
 
   border: 1px solid var(--border-color);
-  border-radius: 16px;
-
-  color: var(--text-color);
-
-  font-weight: 500;
+  border-radius: 18px;
 
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
 }
 
 .skill-card span {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .skill-card p {
   margin: 0;
+
   font-size: 15px;
-}
+  font-weight: 600;
 
-.skill-card:hover {
-  transform: translateY(-4px);
-
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-
-  color: white;
+  color: var(--text-color);
 }
 
 /* =========================
@@ -236,113 +266,116 @@ nav ul li a.active::after {
 }
 
 .section-title h2 {
-  font-size: 36px;
+  font-size: 38px;
+  letter-spacing: -1px;
+
   color: var(--text-color);
 }
 
 .section-title p {
-  margin-top: 14px;
+  margin-top: 16px;
+
+  max-width: 700px;
+  margin-inline: auto;
 
   line-height: 1.8;
-
   color: var(--secondary-text);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .skills {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* =========================
-   HOBBY
+   HOBBY SECTION
 ========================= */
 .hobby-section {
   padding: 20px 8% 100px;
 }
 
 .hobby-container {
-  margin-top: 40px;
+  margin-top: 50px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 
-  gap: 25px;
+  gap: 24px;
 }
 
 .hobby-card {
-  background: white;
+  padding: 32px;
 
-  padding: 30px;
+  background: var(--card-bg);
 
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .hobby-card:hover {
-  transform: translateY(-5px);
-  border-color: #2563eb;
+  transform: translateY(-6px);
+
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hobby-card h3 {
   font-size: 22px;
-  color: #0f172a;
+  color: var(--text-color);
 }
 
 .hobby-card p {
-  margin-top: 15px;
-
-  color: #64748b;
-  line-height: 1.8;
+  margin-top: 16px;
 
   font-size: 15px;
+  line-height: 1.8;
+
+  color: var(--secondary-text);
 }
 
 /* =========================
-   GOALS & LEARNING
+   GOALS SECTION
 ========================= */
 .goals-section {
   padding: 20px 8% 100px;
 }
 
 .goals-container {
-  margin-top: 40px;
+  margin-top: 50px;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
-  gap: 25px;
+  gap: 24px;
 }
 
 .goal-card {
-  background: white;
-
   padding: 35px;
 
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
+  background: var(--card-bg);
 
-  transition: 0.3s;
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+
+  transition: 0.3s ease;
 }
 
 .goal-card:hover {
-  transform: translateY(-5px);
-  border-color: #2563eb;
+  transform: translateY(-6px);
+
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .goal-card h3 {
-  font-size: 24px;
-  color: #0f172a;
   margin-bottom: 18px;
+
+  font-size: 24px;
+  color: var(--text-color);
 }
 
 .goal-card p {
-  color: #64748b;
-  line-height: 1.8;
   margin-bottom: 20px;
+
+  line-height: 1.8;
+  color: var(--secondary-text);
 }
 
 .goal-card ul {
@@ -352,59 +385,49 @@ nav ul li a.active::after {
 .goal-card ul li {
   margin-bottom: 12px;
 
-  color: #475569;
   line-height: 1.7;
+  color: #475569;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   width: 100%;
-  padding: 28px 8%;
+
+  margin-top: 60px;
+  padding: 30px 8%;
 
   background: #ffffff;
-
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--border-color);
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin-top: 50px;
 }
 
 footer p {
-  color: #64748b;
+  text-align: center;
 
   font-size: 15px;
-  letter-spacing: 0.3px;
+  color: var(--secondary-text);
 
-  text-align: center;
+  letter-spacing: 0.3px;
 }
 
 /* =========================
-   DARK MODE BUTTON
+   ANIMATION
 ========================= */
-#theme-toggle {
-  width: 45px;
-  height: 45px;
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
 
-  border: none;
-  border-radius: 12px;
-
-  background: #eff6ff;
-  color: #2563eb;
-
-  cursor: pointer;
-
-  font-size: 18px;
-
-  transition: 0.3s;
+  transition: all 0.8s ease;
 }
 
-#theme-toggle:hover {
-  transform: scale(1.08);
-  background: #2563eb;
-  color: white;
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
@@ -417,23 +440,24 @@ body.dark-mode {
 
 /* NAVBAR */
 body.dark-mode nav {
-  background: rgba(15, 23, 42, 0.9);
-  border-bottom: 1px solid #1e293b;
+  background: rgba(15, 23, 42, 0.92);
+  border-color: #1e293b;
 }
 
-body.dark-mode .logo,
+/* TEXT */
+body.dark-mode .logo-box h2,
 body.dark-mode nav ul li a,
 body.dark-mode .about-content h1,
 body.dark-mode .project-section h3,
 body.dark-mode .section-title h2,
 body.dark-mode .hobby-card h3,
 body.dark-mode .goal-card h3,
-body.dark-mode footer p {
+body.dark-mode footer p,
+body.dark-mode .skill-card p {
   color: #f8fafc;
 }
 
-/* TEXT */
-body.dark-mode .job,
+body.dark-mode .logo-box p,
 body.dark-mode .about-content p,
 body.dark-mode .section-title p,
 body.dark-mode .goal-card p,
@@ -451,36 +475,10 @@ body.dark-mode footer {
   border-color: #1e293b;
 }
 
-/* IMAGE */
-body.dark-mode .image-box {
-  background: #1e293b;
-}
-
 /* BUTTON */
 body.dark-mode #theme-toggle {
   background: #1e293b;
   color: #facc15;
-}
-
-/* HOVER */
-body.dark-mode .skill-card:hover,
-body.dark-mode .hobby-card:hover,
-body.dark-mode .goal-card:hover {
-  border-color: #3b82f6;
-}
-
-/* =========================
-   ANIMATION
-========================= */
-.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* =========================
@@ -488,188 +486,62 @@ body.dark-mode .goal-card:hover {
 ========================= */
 @media (max-width: 992px) {
   .about-section {
-    grid-template-columns: 1fr;
-    text-align: center;
+    padding: 90px 6%;
   }
 
-  .skills {
-    justify-content: center;
-  }
-
-  .about-content h1 {
-    font-size: 46px;
+  .about-content {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-
-  nav ul {
     gap: 18px;
-  }
 
-  .about-section {
-    padding: 60px 6%;
-  }
-
-  .about-content h1 {
-    font-size: 38px;
-  }
-
-  .about-content p {
-    font-size: 16px;
-  }
-
-  .image-box {
-    width: 280px;
-    height: 380px;
-  }
-
-  .section-title h2 {
-    font-size: 30px;
-  }
-
-  .goal-card,
-  .hobby-card {
-    padding: 25px;
-  }
-}
-
-/* =========================
-   EXTRA RESPONSIVE
-========================= */
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-/* HEADING RESPONSIVE */
-.about-content h1 {
-  font-size: clamp(32px, 6vw, 56px);
-}
-
-/* IMAGE RESPONSIVE */
-.image-box {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  aspect-ratio: 3 / 4;
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* SKILLS RESPONSIVE */
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.skill-card {
-  min-width: 0;
-  will-change: transform;
-}
-
-.goal-card,
-.hobby-card {
-  will-change: transform;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-}
-
-/* NAVBAR TRANSITION */
-nav ul li a {
-  transition: color 0.3s ease;
-}
-
-/* NAVBAR SHADOW */
-nav.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================
-   TABLET
-========================= */
-@media (max-width: 992px) {
-  .about-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-content h1 {
-    font-size: clamp(32px, 7vw, 48px);
-  }
-
-  .skills {
-    justify-content: center;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
     padding: 20px 6%;
+
+    text-align: center;
   }
 
   nav ul {
-    gap: 18px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .about-section {
-    padding: 60px 6%;
-    gap: 50px;
+  .about-section,
+  .hobby-section,
+  .goals-section {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .about-content h1 {
+    line-height: 1.2;
   }
 
   .about-content p {
     font-size: 16px;
   }
 
-  .image-box {
-    max-width: 280px;
-  }
-
   .section-title h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .goal-card,
   .hobby-card {
-    padding: 25px;
+    padding: 28px;
   }
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
 @media (max-width: 576px) {
   nav {
     padding: 18px 5%;
   }
 
   nav ul {
-    gap: 14px;
+    gap: 16px;
   }
 
   nav ul li a {
@@ -684,11 +556,12 @@ nav.scrolled {
   }
 
   .about-section {
-    gap: 40px;
+    padding-top: 70px;
   }
 
   .about-content h1 {
-    line-height: 1.3;
+    font-size: 34px;
+    letter-spacing: -1px;
   }
 
   .project-section h3,
@@ -704,6 +577,10 @@ nav.scrolled {
   .goal-card,
   .hobby-card,
   .skill-card {
-    padding: 20px;
+    padding: 22px;
+  }
+
+  footer {
+    padding: 24px 5%;
   }
 }

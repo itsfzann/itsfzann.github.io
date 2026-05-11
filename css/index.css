@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +16,17 @@ body {
   background: #f8fafc;
   color: #1e293b;
   overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 8%;
 }
 
 /* =========================
@@ -21,7 +34,7 @@ body {
 ========================= */
 nav {
   width: 100%;
-  padding: 20px 8%;
+  padding: 18px 8%;
 
   display: flex;
   justify-content: space-between;
@@ -43,7 +56,9 @@ body.dark-mode nav {
   border-color: #1e293b;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 .logo-box {
   display: flex;
   flex-direction: column;
@@ -63,28 +78,20 @@ body.dark-mode nav {
   color: #64748b;
 }
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 nav ul {
   display: flex;
   align-items: center;
-  justify-content: center;
-
   list-style: none;
-  gap: 42px;
-
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  list-style: none;
+  gap: 36px;
 }
 
 nav ul li a {
   position: relative;
 
   text-decoration: none;
-
   color: #0f172a;
 
   font-size: 15px;
@@ -104,8 +111,7 @@ nav ul li a::after {
   width: 0%;
   height: 2px;
 
-  border-radius: 20px;
-
+  border-radius: 50px;
   background: #2563eb;
 
   transition: 0.3s ease;
@@ -121,10 +127,26 @@ nav ul li a.active::after {
   width: 100%;
 }
 
-/* DARK MODE TEXT */
-body.dark-mode .logo,
-body.dark-mode nav ul li a {
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode {
+  background: #0f172a;
   color: #f8fafc;
+}
+
+body.dark-mode .logo,
+body.dark-mode nav ul li a,
+body.dark-mode .hero-content h1,
+body.dark-mode .section-title h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .description,
+body.dark-mode .job,
+body.dark-mode .footer-text,
+body.dark-mode .footer-bottom {
+  color: #cbd5e1;
 }
 
 body.dark-mode nav ul li a:hover,
@@ -132,13 +154,15 @@ body.dark-mode nav ul li a.active {
   color: #3b82f6;
 }
 
-/* THEME BUTTON */
+/* =========================
+   THEME BUTTON
+========================= */
 #theme-toggle {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
 
   border: none;
-  border-radius: 18px;
+  border-radius: 16px;
 
   background: #eff6ff;
   color: #2563eb;
@@ -167,10 +191,8 @@ body.dark-mode #theme-toggle {
 }
 
 /* =========================
-   TEXT IMPROVEMENT
+   HERO
 ========================= */
-
-/* HERO TITLE */
 .hero-content h1 {
   font-size: clamp(42px, 7vw, 68px);
   line-height: 1.08;
@@ -186,29 +208,29 @@ body.dark-mode #theme-toggle {
   color: #2563eb;
 }
 
-/* DESCRIPTION */
 .description {
-  margin-top: 28px;
-
+  margin-top: 24px;
   max-width: 720px;
 
   color: #475569;
 
-  line-height: 1.95;
+  line-height: 1.9;
   font-size: 17px;
-  font-weight: 400;
 }
 
-/* SECTION TITLE */
+/* =========================
+   SECTION TITLE
+========================= */
 .highlight-title h2,
 .skill-title h2,
 .section-title h2 {
   font-size: 38px;
   line-height: 1.2;
   letter-spacing: -1px;
+
+  margin-bottom: 12px;
 }
 
-/* PARAGRAPH */
 .highlight-title p,
 .skill-title p,
 .section-title p,
@@ -216,15 +238,120 @@ body.dark-mode #theme-toggle {
 .goal-card p,
 .hobby-card p {
   line-height: 1.85;
+  color: #64748b;
 }
 
-/* CARD TITLE */
+/* =========================
+   CARD TITLE
+========================= */
 .highlight-card h3,
 .hobby-card h3,
 .goal-card h3,
 .contact-card h3 {
   line-height: 1.3;
   letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER PROFESSIONAL
+========================= */
+footer {
+  margin-top: 100px;
+
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+
+  padding: 70px 8% 30px;
+}
+
+body.dark-mode footer {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+/* TOP */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+
+  flex-wrap: wrap;
+
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+body.dark-mode .footer-container {
+  border-color: #1e293b;
+}
+
+/* LEFT */
+.footer-brand {
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-brand h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+body.dark-mode .footer-brand h2 {
+  color: #f8fafc;
+}
+
+.footer-text {
+  max-width: 420px;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+/* RIGHT */
+.footer-links {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 18px;
+  color: #0f172a;
+}
+
+body.dark-mode .footer-column h4 {
+  color: #f8fafc;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #64748b;
+
+  transition: 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #2563eb;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  text-align: center;
+  padding-top: 28px;
+
+  font-size: 14px;
+  color: #94a3b8;
 }
 
 /* =========================
@@ -233,28 +360,28 @@ body.dark-mode #theme-toggle {
 @media (max-width: 768px) {
   nav {
     padding: 18px 6%;
-
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
 
   nav ul {
-    gap: 24px;
+    gap: 22px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .logo {
-    font-size: 20px;
-    text-align: center;
-  }
-
+  .logo,
   .job {
     text-align: center;
   }
 
+  .logo {
+    font-size: 20px;
+  }
+
   #theme-toggle {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
 
   .hero-content h1 {
@@ -264,7 +391,17 @@ body.dark-mode #theme-toggle {
 
   .description {
     font-size: 16px;
-    line-height: 1.9;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 40px;
   }
 }
 
@@ -294,5 +431,18 @@ body.dark-mode #theme-toggle {
 
   .hero-content h1 {
     font-size: 36px;
+  }
+
+  footer {
+    padding: 60px 5% 25px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-brand h2 {
+    font-size: 22px;
   }
 }
