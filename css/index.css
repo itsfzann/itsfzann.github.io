@@ -64,11 +64,6 @@ nav {
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  transition: box-shadow 0.3s ease;
-}
-
-nav.scrolled {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .logo-box {
@@ -164,7 +159,7 @@ nav ul li a.active::after {
   z-index: 1;
 }
 
-/* Glowing orb behind hero */
+/* Glowing orb */
 .hero::before {
   content: "";
   position: absolute;
@@ -227,7 +222,9 @@ nav ul li a.active::after {
   color: var(--text-muted);
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 .hero-button {
   display: flex;
   justify-content: center;
@@ -253,7 +250,6 @@ nav ul li a.active::after {
   background: var(--primary);
   color: white;
   border: 1px solid transparent;
-  box-shadow: 0 0 0 0 var(--primary-glow);
 }
 
 .btn:hover {
@@ -274,7 +270,9 @@ nav ul li a.active::after {
   background: var(--bg-card);
 }
 
-/* SOCIAL */
+/* =========================
+   SOCIAL LINKS
+========================= */
 .social-links {
   display: flex;
   justify-content: center;
@@ -348,7 +346,9 @@ nav ul li a.active::after {
   margin: 0 auto;
 }
 
-/* HIGHLIGHT CARDS */
+/* =========================
+   HIGHLIGHT CARDS
+========================= */
 .highlight-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -415,7 +415,9 @@ nav ul li a.active::after {
   line-height: 1.75;
 }
 
-/* SKILL CARDS */
+/* =========================
+   SKILL CARDS
+========================= */
 .skill-container {
   display: flex;
   justify-content: center;
@@ -444,16 +446,9 @@ nav ul li a.active::after {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* DIVIDER */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 0 8%;
-  width: 84%;
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   padding: 32px 8%;
   border-top: 1px solid var(--border);
@@ -469,33 +464,78 @@ footer p {
 }
 
 /* =========================
-   ANIMATIONS
+   ANIMASI PURE CSS
+   (tanpa JavaScript)
 ========================= */
-.hidden {
-  opacity: 0;
-  transform: translateY(32px);
-  transition:
-    opacity 0.75s ease,
-    transform 0.75s ease;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+/* Hero content muncul otomatis saat halaman load */
+.hero-content {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.15s;
 }
 
-/* Staggered card animation */
+/* Section highlight & skill pakai animation-timeline scroll */
+.highlight-section {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+.skill-section {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+/* Stagger tiap card */
 .highlight-card:nth-child(1) {
-  transition-delay: 0.05s;
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.1s;
 }
 .highlight-card:nth-child(2) {
-  transition-delay: 0.12s;
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.2s;
 }
 .highlight-card:nth-child(3) {
-  transition-delay: 0.19s;
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.3s;
 }
 .highlight-card:nth-child(4) {
-  transition-delay: 0.26s;
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.4s;
+}
+
+.skill-card:nth-child(1) {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.1s;
+}
+.skill-card:nth-child(2) {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.17s;
+}
+.skill-card:nth-child(3) {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.24s;
+}
+.skill-card:nth-child(4) {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.31s;
+}
+.skill-card:nth-child(5) {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.38s;
+}
+.skill-card:nth-child(6) {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.45s;
 }
 
 /* =========================
@@ -567,6 +607,7 @@ footer p {
   .hero-button {
     flex-direction: column;
   }
+
   .social-links {
     flex-wrap: wrap;
   }
