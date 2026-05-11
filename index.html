@@ -3,43 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Portfolio | Fauzan Adi Khairrudin</title>
-
-    <link rel="stylesheet" href=" ./css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
     />
   </head>
 
   <body>
     <!-- NAVBAR -->
-    <nav>
+    <nav id="navbar">
       <div class="logo-box">
         <div class="logo">Fauzan Adi Khairrudin</div>
-
         <div class="job">Junior Front End Developer</div>
       </div>
 
       <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-<button id="theme-toggle">🌙</button>
+      <button id="theme-toggle">🌙</button>
     </nav>
 
     <!-- HERO -->
     <section class="hero" id="home">
-      <!-- LEFT -->
       <div class="hero-content hidden">
         <p class="intro">— FRONT END DEVELOPER</p>
 
         <h1>
-          Hi, Saya
-          <span> Fauzan Adi Khairrudin </span>
+          Hi, Saya<br />
+          <span>Fauzan Adi Khairrudin</span>
         </h1>
 
         <p class="description">
@@ -52,19 +53,32 @@
         </p>
 
         <div class="hero-button">
-          <a href="contact.html" class="btn"> Lihat Contact </a>
+          <a href="contact.html" class="btn">
+            <i class="fa-solid fa-envelope"></i> Lihat Contact
+          </a>
+          <a href="about.html" class="btn-outline">
+            <i class="fa-solid fa-user"></i> Tentang Saya
+          </a>
+        </div>
 
-          <a href="about.html" class="btn-outline"> Tentang Saya </a>
+        <div class="social-links">
+          <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" title="LinkedIn"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="#" title="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" title="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
-
-     
+    </section>
 
     <!-- PROFESSIONAL HIGHLIGHT SECTION -->
     <section class="highlight-section hidden">
       <div class="highlight-title">
+        <div class="section-label">Keunggulan</div>
         <h2>Why Work With Me</h2>
-
         <p>
           Fokus membangun website modern yang responsive, clean, dan nyaman
           digunakan.
@@ -72,36 +86,36 @@
       </div>
 
       <div class="highlight-container">
-        <div class="highlight-card">
+        <div class="highlight-card hidden">
+          <div class="card-icon">📱</div>
           <h3>Responsive Website</h3>
-
           <p>
             Membangun tampilan website yang optimal di desktop, tablet, dan
             mobile dengan layout yang fleksibel dan modern.
           </p>
         </div>
 
-        <div class="highlight-card">
+        <div class="highlight-card hidden">
+          <div class="card-icon">🎨</div>
           <h3>Clean UI Design</h3>
-
           <p>
             Mengutamakan desain interface yang rapi, profesional, dan mudah
             dipahami oleh pengguna.
           </p>
         </div>
 
-        <div class="highlight-card">
+        <div class="highlight-card hidden">
+          <div class="card-icon">⚡</div>
           <h3>Fast Performance</h3>
-
           <p>
             Mengoptimalkan struktur website agar loading lebih cepat dan
             pengalaman pengguna lebih nyaman.
           </p>
         </div>
 
-        <div class="highlight-card">
+        <div class="highlight-card hidden">
+          <div class="card-icon">🛠️</div>
           <h3>Modern Development</h3>
-
           <p>
             Menggunakan teknologi front end modern seperti HTML, CSS,
             JavaScript, Bootstrap, dan TailwindCSS.
@@ -113,24 +127,24 @@
     <!-- SKILL SECTION -->
     <section class="skill-section hidden">
       <div class="skill-title">
+        <div class="section-label">Teknologi</div>
         <h2>Tech Stack</h2>
-
         <p>Teknologi yang sering saya gunakan</p>
       </div>
 
       <div class="skill-container">
         <div class="skill-card">HTML5</div>
-
         <div class="skill-card">CSS3</div>
-
         <div class="skill-card">JavaScript</div>
+        <div class="skill-card">Bootstrap</div>
+        <div class="skill-card">TailwindCSS</div>
+        <div class="skill-card">Git & GitHub</div>
       </div>
     </section>
 
     <footer>
       <p>© 2026 Fauzan Adi Khairrudin. All Rights Reserved.</p>
     </footer>
-
     <script src="./js/script.js"></script>
   </body>
 </html>
