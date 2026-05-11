@@ -383,6 +383,238 @@ nav ul li a.active::after {
 }
 
 /* =========================
+   ABOUT SECTION
+========================= */
+.about-section-single {
+  padding: 80px 8%;
+}
+
+.about-content-single {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-content-single h2 {
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.12;
+  color: var(--text-color);
+}
+
+.about-content-single p {
+  max-width: 760px;
+  color: var(--secondary-text);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.project-section {
+  margin-top: 40px;
+}
+
+.project-section h3 {
+  font-size: 22px;
+  color: var(--text-color);
+  margin-bottom: 22px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  padding: 26px 22px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card span {
+  font-size: 32px;
+}
+
+.project-card p {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+}
+
+/* =========================
+   HOBBY SECTION
+========================= */
+.hobby-section {
+  padding: 80px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.section-title p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--secondary-text);
+  line-height: 1.8;
+}
+
+.hobby-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.hobby-card {
+  padding: 28px 24px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: 0.3s ease;
+}
+
+.hobby-card h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: var(--text-color);
+}
+
+.hobby-card p {
+  color: var(--secondary-text);
+  line-height: 1.8;
+}
+
+.hobby-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact-section {
+  padding: 80px 8%;
+}
+
+.contact-content {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-desc {
+  max-width: 760px;
+  color: var(--secondary-text);
+  line-height: 1.8;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 24px;
+  border-radius: 22px;
+  text-decoration: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+.contact-card i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.contact-card p {
+  color: var(--secondary-text);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: 0.3s ease;
+}
+
+.info-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--text-color);
+}
+
+.info-card p {
+  color: var(--secondary-text);
+  line-height: 1.8;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer {
@@ -437,6 +669,15 @@ body.dark-mode nav {
   border-bottom: 1px solid var(--border-color);
 }
 
+body.dark-mode nav ul li a {
+  color: var(--secondary-text);
+}
+
+body.dark-mode nav ul li a.active,
+body.dark-mode nav ul li a:hover {
+  color: var(--primary-color);
+}
+
 /* Theme toggle */
 body.dark-mode #theme-toggle {
   background: #1e293b;
@@ -453,6 +694,23 @@ body.dark-mode .intro {
   background: #1e293b;
   border-color: #334155;
   color: #60a5fa;
+}
+
+body.dark-mode .description,
+body.dark-mode .project-card p,
+body.dark-mode .hobby-card p,
+body.dark-mode .contact-desc,
+body.dark-mode .info-card p,
+body.dark-mode .section-title p,
+body.dark-mode .highlight-title p,
+body.dark-mode .skill-title p,
+body.dark-mode .about-content-single p {
+  color: var(--secondary-text);
+}
+
+body.dark-mode footer {
+  background: #111827;
+  border-top-color: #1f2937;
 }
 
 /* Buttons */
@@ -503,7 +761,10 @@ body.dark-mode .skill-card:hover {
 
   .hero,
   .highlight-section,
-  .skill-section {
+  .skill-section,
+  .about-section-single,
+  .hobby-section,
+  .contact-section {
     padding-left: 6%;
     padding-right: 6%;
   }
@@ -515,6 +776,17 @@ body.dark-mode .skill-card:hover {
   .highlight-title h2,
   .skill-title h2 {
     font-size: 30px;
+  }
+
+  .projects-grid,
+  .hobby-container,
+  .contact-container,
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    gap: 24px;
   }
 }
 
