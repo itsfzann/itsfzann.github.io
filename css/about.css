@@ -538,3 +538,172 @@ body.dark-mode .goal-card:hover {
     padding: 25px;
   }
 }
+
+/* =========================
+   EXTRA RESPONSIVE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* HEADING RESPONSIVE */
+.about-content h1 {
+  font-size: clamp(32px, 6vw, 56px);
+}
+
+/* IMAGE RESPONSIVE */
+.image-box {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SKILLS RESPONSIVE */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.skill-card {
+  min-width: 0;
+  will-change: transform;
+}
+
+.goal-card,
+.hobby-card {
+  will-change: transform;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+}
+
+/* NAVBAR TRANSITION */
+nav ul li a {
+  transition: color 0.3s ease;
+}
+
+/* NAVBAR SHADOW */
+nav.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-content h1 {
+    font-size: clamp(32px, 7vw, 48px);
+  }
+
+  .skills {
+    justify-content: center;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px 6%;
+  }
+
+  nav ul {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-section {
+    padding: 60px 6%;
+    gap: 50px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
+  .image-box {
+    max-width: 280px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .goal-card,
+  .hobby-card {
+    padding: 25px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 576px) {
+  nav {
+    padding: 18px 5%;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .about-section,
+  .hobby-section,
+  .goals-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about-section {
+    gap: 40px;
+  }
+
+  .about-content h1 {
+    line-height: 1.3;
+  }
+
+  .project-section h3,
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .goal-card h3,
+  .hobby-card h3 {
+    font-size: 20px;
+  }
+
+  .goal-card,
+  .hobby-card,
+  .skill-card {
+    padding: 20px;
+  }
+}
