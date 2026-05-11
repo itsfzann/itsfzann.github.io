@@ -14,6 +14,56 @@ hiddenElements.forEach((el) => {
 });
 
 /* =========================
+   ACTIVE NAV LINK (SPA)
+========================= */
+const navLinks = document.querySelectorAll("nav a[href^='#']");
+const sections = document.querySelectorAll("section[id]");
+
+function updateActiveLink() {
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (window.scrollY >= sectionTop - 150) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", updateActiveLink);
+document.addEventListener("DOMContentLoaded", updateActiveLink);
+
+/* =========================
+   SMOOTH SCROLL BEHAVIOR
+========================= */
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        // Update active link immediately
+        setTimeout(updateActiveLink, 100);
+      }
+    }
+  });
+});
+
+/* =========================
    DARK MODE
 ========================= */
 
