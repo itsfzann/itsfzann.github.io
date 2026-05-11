@@ -6,22 +6,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-:root {
-  --text-color: #0f172a;
-  --secondary-text: #64748b;
-  --card-bg: white;
-  --border-color: #e2e8f0;
-  --primary-color: #2563eb;
-}
-
-body.dark-mode {
-  --text-color: #f8fafc;
-  --secondary-text: #cbd5e1;
-  --card-bg: #111827;
-  --border-color: #1e293b;
-  --primary-color: #3b82f6;
-}
-
 body {
   background: #f8fafc;
   color: #0f172a;
@@ -128,6 +112,30 @@ nav ul li a.active::after {
   gap: 70px;
 
   align-items: center;
+}
+
+/* IMAGE */
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-box {
+  width: 360px;
+  height: 480px;
+
+  overflow: hidden;
+  border-radius: 30px;
+
+  background: #e2e8f0;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* CONTENT */
