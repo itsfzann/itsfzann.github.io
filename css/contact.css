@@ -322,34 +322,34 @@ nav ul li a:hover::after {
 }
 
 /* DARK MODE */
-body.dark .cta-section {
+body.dark-mode .cta-section {
   background: #1e293b;
   box-shadow: none;
 }
 
-body.dark .cta-section h2 {
+body.dark-mode .cta-section h2 {
   color: white;
 }
 
-body.dark .cta-section p {
+body.dark-mode .cta-section p {
   color: #cbd5e1;
 }
 
-body.dark .btn-primary {
+body.dark-mode .btn-primary {
   background: white;
   color: #0f172a;
 }
 
-body.dark .btn-primary:hover {
+body.dark-mode .btn-primary:hover {
   background: #e2e8f0;
 }
 
-body.dark .btn-secondary {
+body.dark-mode .btn-secondary {
   border-color: white;
   color: white;
 }
 
-body.dark .btn-secondary:hover {
+body.dark-mode .btn-secondary:hover {
   background: white;
   color: #0f172a;
 }
@@ -366,32 +366,32 @@ body.dark .btn-secondary:hover {
 }
 
 /* DARK MODE SUPPORT */
-body.dark .status-badge {
+body.dark-mode .status-badge {
   background: rgba(34, 197, 94, 0.15);
   color: #86efac;
   border: 1px solid rgba(134, 239, 172, 0.3);
 }
 
-body.dark .btn-primary {
+body.dark-mode .btn-primary {
   background: white;
   color: #0f172a;
 }
 
-body.dark .btn-primary:hover {
+body.dark-mode .btn-primary:hover {
   background: #e2e8f0;
 }
 
-body.dark .btn-secondary {
+body.dark-mode .btn-secondary {
   border-color: white;
   color: white;
 }
 
-body.dark .btn-secondary:hover {
+body.dark-mode .btn-secondary:hover {
   background: white;
   color: #0f172a;
 }
 
-body.dark .closing-text {
+body.dark-mode .closing-text {
   color: #cbd5e1;
 }
 
@@ -487,6 +487,16 @@ body.dark-mode #theme-toggle {
 body.dark-mode .contact-card:hover,
 body.dark-mode .info-card:hover {
   border-color: #3b82f6;
+}
+
+/* CTA SECTION */
+body.dark-mode .cta-section {
+  background: #1e293b;
+}
+
+body.dark-mode .cta-section h2,
+body.dark-mode .cta-section p {
+  color: #f8fafc;
 }
 
 /* =========================

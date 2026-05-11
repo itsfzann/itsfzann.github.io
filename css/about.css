@@ -6,6 +6,22 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+  --text-color: #0f172a;
+  --secondary-text: #64748b;
+  --card-bg: white;
+  --border-color: #e2e8f0;
+  --primary-color: #2563eb;
+}
+
+body.dark-mode {
+  --text-color: #f8fafc;
+  --secondary-text: #cbd5e1;
+  --card-bg: #111827;
+  --border-color: #1e293b;
+  --primary-color: #3b82f6;
+}
+
 body {
   background: #f8fafc;
   color: #0f172a;
