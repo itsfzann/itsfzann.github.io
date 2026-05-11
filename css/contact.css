@@ -1,5 +1,5 @@
 /* =========================
-   RESET
+   RESET & ROOT
 ========================= */
 * {
   margin: 0;
@@ -8,9 +8,21 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* =========================
+   ROOT COLORS
+========================= */
+:root {
+  --primary-color: #2563eb;
+  --text-color: #0f172a;
+  --secondary-text: #64748b;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+  --bg: #f8fafc;
+}
+
 body {
-  background: #f8fafc;
-  color: #1e293b;
+  background: var(--bg);
+  color: var(--text-color);
 }
 
 /* =========================
@@ -441,14 +453,21 @@ footer {
    DARK MODE
 ========================= */
 body.dark-mode {
-  background: #0f172a;
-  color: #f8fafc;
+  --primary-color: #3b82f6;
+  --text-color: #f1f5f9;
+  --secondary-text: #cbd5e1;
+  --border-color: #1e293b;
+  --card-bg: #111827;
+  --bg: #0f172a;
+  
+  background: var(--bg);
+  color: var(--text-color);
 }
 
 /* NAVBAR */
 body.dark-mode nav {
-  background: rgba(15, 23, 42, 0.9);
-  border-bottom: 1px solid #1e293b;
+  background: rgba(15, 23, 42, 0.92);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* TEXT PUTIH */

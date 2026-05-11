@@ -21,7 +21,7 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
 
   <body>
@@ -33,9 +33,9 @@
       </div>
 
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <button id="theme-toggle">🌙</button>
@@ -61,10 +61,10 @@
         </p>
 
         <div class="hero-button">
-          <a href="contact.html" class="btn">
+          <a href="#contact" class="btn">
             <i class="fa-solid fa-envelope"></i> Lihat Contact
           </a>
-          <a href="about.html" class="btn-outline">
+          <a href="#about" class="btn-outline">
             <i class="fa-solid fa-user"></i> Tentang Saya
           </a>
         </div>
@@ -150,10 +150,149 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ABOUT SECTION -->
+    <section class="about-section-single hidden" id="about">
+      <div class="about-content-single">
+        <div class="section-label">Tentang Saya</div>
+        <h2>Building Modern & Responsive Website Interfaces</h2>
+        <p>
+          Saya Fauzan Adi Khairrudin, seorang Junior Front End Developer yang
+          berfokus membangun tampilan website modern, responsive, dan user
+          friendly menggunakan HTML, CSS, JavaScript, Bootstrap, dan
+          TailwindCSS.
+        </p>
+        <p>
+          Saya memiliki ketertarikan dalam pengembangan UI modern, responsive
+          design, dan optimalisasi tampilan website agar lebih nyaman digunakan
+          di berbagai perangkat. Saat ini saya terus belajar dan mengembangkan
+          kemampuan untuk menciptakan website yang profesional, interaktif, dan
+          memiliki performa yang baik.
+        </p>
+
+        <!-- PROJECT -->
+        <div class="project-section">
+          <h3>Project Experience</h3>
+          <div class="projects-grid">
+            <div class="project-card">
+              <span>🚗</span>
+              <p>Website Rental Mobil</p>
+            </div>
+            <div class="project-card">
+              <span>🏫</span>
+              <p>Sistem Pengaduan Sarana Siswa</p>
+            </div>
+            <div class="project-card">
+              <span>🅿️</span>
+              <p>Aplikasi Manajemen Parkir</p>
+            </div>
+            <div class="project-card">
+              <span>📦</span>
+              <p>Aplikasi Peminjaman Alat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBY SECTION -->
+    <section class="hobby-section hidden">
+      <div class="section-title">
+        <h2>HOBBY & INTEREST</h2>
+        <p>
+          Beberapa aktivitas yang membantu saya tetap kreatif dan produktif.
+        </p>
+      </div>
+      <div class="hobby-container">
+        <div class="hobby-card">
+          <h3>💻 Coding</h3>
+          <p>
+            Mempelajari teknologi baru dan mengembangkan website modern dengan
+            tampilan yang clean dan responsive.
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h3>🎨 UI Design</h3>
+          <p>
+            Menyukai desain antarmuka modern yang sederhana, profesional, dan
+            nyaman digunakan.
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h3>🎧 Musik</h3>
+          <p>
+            Mendengarkan musik saat bekerja untuk meningkatkan fokus dan
+            kreativitas saat coding.
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h3>⛰️ Hiking</h3>
+          <p>
+            Menyukai aktivitas outdoor seperti mendaki gunung untuk menikmati
+            alam dan mencari pengalaman baru.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section hidden" id="contact">
+      <div class="contact-content">
+        <div class="section-label">Kontak</div>
+        <h2>Let's Build Something Great Together</h2>
+        <p class="contact-desc">
+          Saya terbuka untuk peluang kerja, freelance, maupun kolaborasi project
+          website modern dan responsive. Hubungi saya melalui platform berikut.
+        </p>
+
+        <div class="status-badge">
+          🟢 Available for Internship & Freelance
+        </div>
+
+        <div class="contact-container">
+          <a href="mailto:fauzanadik4@gmail.com" class="contact-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email</h3>
+            <p>fauzanadik4@gmail.com</p>
+          </a>
+          <a
+            href="https://www.instagram.com/usnfrkaaa?igsh=YjM3M2FtdG81Mnc3"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fa-brands fa-instagram"></i>
+            <h3>Instagram</h3>
+            <p>@fzannn</p>
+          </a>
+          <a
+            href="https://github.com/itsfzann"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub</h3>
+            <p>github.com/itsfzann</p>
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>📍 Location</h3>
+            <p>Yogyakarta, Indonesia</p>
+          </div>
+          <div class="info-card">
+            <h3>⚡ Response Time</h3>
+            <p>Usually replies within 24 hours</p>
+          </div>
+          <div class="info-card">
+            <h3>💼 Availability</h3>
+            <p>Open for freelance & collaboration</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer>
       <p>© 2026 Fauzan Adi Khairrudin. All Rights Reserved.</p>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

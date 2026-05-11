@@ -12,13 +12,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: #f8fafc;
-  color: #0f172a;
-  overflow-x: hidden;
-  line-height: 1.7;
-}
-
 /* =========================
    ROOT COLORS
 ========================= */
@@ -28,6 +21,16 @@ body {
   --secondary-text: #64748b;
   --border-color: #e2e8f0;
   --card-bg: #ffffff;
+  --bg: #f8fafc;
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.7;
+  font-family: var(--font);
 }
 
 /* =========================
@@ -434,14 +437,21 @@ footer p {
    DARK MODE
 ========================= */
 body.dark-mode {
-  background: #0f172a;
-  color: #f8fafc;
+  --primary-color: #3b82f6;
+  --text-color: #f1f5f9;
+  --secondary-text: #cbd5e1;
+  --border-color: #1e293b;
+  --card-bg: #111827;
+  --bg: #0f172a;
+  
+  background: var(--bg);
+  color: var(--text-color);
 }
 
 /* NAVBAR */
 body.dark-mode nav {
   background: rgba(15, 23, 42, 0.92);
-  border-color: #1e293b;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* TEXT */

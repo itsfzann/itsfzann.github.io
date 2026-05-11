@@ -420,34 +420,21 @@ footer p {
    DARK MODE
 ========================= */
 body.dark-mode {
-  background: #0f172a;
-  color: #f8fafc;
+  --primary-color: #3b82f6;
+  --text-color: #f1f5f9;
+  --secondary-text: #cbd5e1;
+  --border-color: #1e293b;
+  --card-bg: #111827;
+  --bg: #0f172a;
+  
+  background: var(--bg);
+  color: var(--text-color);
 }
 
 /* Navbar */
 body.dark-mode nav {
   background: rgba(15, 23, 42, 0.92);
-  border-color: #1e293b;
-}
-
-body.dark-mode nav ul li a {
-  color: #cbd5e1;
-}
-
-body.dark-mode nav ul li a:hover,
-body.dark-mode nav ul li a.active {
-  color: #f8fafc;
-}
-
-/* Logo & job */
-body.dark-mode .logo,
-body.dark-mode .logo-box h2 {
-  color: #f8fafc;
-}
-
-body.dark-mode .job,
-body.dark-mode .logo-box p {
-  color: #94a3b8;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Theme toggle */
@@ -456,90 +443,45 @@ body.dark-mode #theme-toggle {
   color: #facc15;
 }
 
-/* Hero */
-body.dark-mode .hero-content h1 {
-  color: #f8fafc;
+body.dark-mode #theme-toggle:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
+/* Intro badge */
 body.dark-mode .intro {
   background: #1e293b;
   border-color: #334155;
   color: #60a5fa;
 }
 
-body.dark-mode .description {
-  color: #cbd5e1;
+/* Buttons */
+body.dark-mode .btn {
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
 }
 
-/* Buttons */
 body.dark-mode .btn-outline {
-  color: #f8fafc;
   border-color: #334155;
 }
 
 body.dark-mode .btn-outline:hover {
   background: #1e293b;
-  border-color: #3b82f6;
-  color: #60a5fa;
+  border-color: var(--primary-color);
 }
 
 /* Social links */
-body.dark-mode .social-links a {
-  background: #111827;
-  border-color: #1e293b;
-  color: #94a3b8;
+body.dark-mode .social-links a:hover {
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
-/* Highlight section */
-body.dark-mode .highlight-title h2,
-body.dark-mode .skill-title h2 {
-  color: #f8fafc;
-}
-
-body.dark-mode .highlight-title p,
-body.dark-mode .skill-title p {
-  color: #cbd5e1;
-}
-
-body.dark-mode .highlight-card {
-  background: #111827;
-  border-color: #1e293b;
-}
-
+/* Highlight cards */
 body.dark-mode .highlight-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
-}
-
-body.dark-mode .highlight-card h3 {
-  color: #f8fafc;
-}
-
-body.dark-mode .highlight-card p {
-  color: #cbd5e1;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
 }
 
 /* Skill cards */
-body.dark-mode .skill-card {
-  background: #111827;
-  border-color: #1e293b;
-  color: #cbd5e1;
-}
-
 body.dark-mode .skill-card:hover {
-  border-color: #3b82f6;
-  color: #60a5fa;
   background: #1e293b;
-}
-
-/* Footer */
-body.dark-mode footer {
-  background: #111827;
-  border-color: #1e293b;
-}
-
-body.dark-mode footer p {
-  color: #64748b;
 }
 
 /* =========================
